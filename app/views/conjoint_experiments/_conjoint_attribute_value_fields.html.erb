@@ -1,0 +1,5 @@
+<li class="nested-fields">
+  <%= f.input :level %>
+  <%= f.input :image, as: :file, label: "Image (if included this will be used instead of text)" %>
+  <%= link_to_remove_association "remove level", f, class: "btn btn-danger" %>
+</li>

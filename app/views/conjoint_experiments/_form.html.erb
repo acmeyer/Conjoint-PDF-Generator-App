@@ -1,0 +1,26 @@
+<%= simple_form_for(@conjoint_experiment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <div>
+      <%= f.input :name_of_choice_1, label: "Choice 1" %>
+      <%= f.input :name_of_choice_2, label: "Choice 2" %>
+    </div>
+    <%= f.input :number_of_trials %>
+    <div class="attributes-section">
+      <h4>Profiles</h4>
+      <hr/>
+      <%= f.simple_fields_for :conjoint_attributes do |ca| %>
+        <%= render 'conjoint_attribute_fields', f: ca %>
+        <div class="links">
+          <%= link_to_add_association 'Add Another Attribute', f, :conjoint_attributes, class: "btn btn-default" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <%= f.input :name, label: "Attribute" %>
+  <%= link_to_remove_association "remove attribute", f, class: "btn btn-danger" %>
+  <ul class="attribute_values">
+    <%= f.simple_fields_for :conjoint_attribute_values do |cav| %>
+      <%= render 'conjoint_attribute_value_fields', :f => cav %>
+    <% end %>
+    <li class="links">
+      <%= link_to_add_association 'Add Another Level', f, :conjoint_attribute_values, class: "btn btn-default" %>
+    </li>
+  </ul>
+</div>
+<hr/>

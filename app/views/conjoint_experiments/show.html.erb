@@ -1,0 +1,115 @@
+<div class="hide-print actions center row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= link_to 'Run Again', "#", class: "btn btn-default", id: "reload-page" %>
+    <%= link_to 'Print', "#", class: "btn btn-default", id: "print-page" %>
+    <%= link_to 'Create New', new_conjoint_experiment_path, class: "btn btn-default" %>
+  </div>
+</div>
+
+<div class="hide-print">
+  <h2><%= @conjoint_experiment.name %></h2>
+  <div>
+    <%= link_to 'Edit', edit_conjoint_experiment_path(@conjoint_experiment) %> |
+    <%= link_to 'Back', conjoint_experiments_path %>
+  </div>
+  <hr/>
+</div>
+
+<div id="tables">
+  <% @conjoint_experiment.number_of_trials.to_i.times do |n| %>
+    <div class="page-break">
+      <h2 class="center">Trial #<%= n + 1 %></h2>
+      <table id="conjoint_table_<%= n + 1 %>" class="conjoint-table table-bordered">
+        <tr>
+          <th><%= @conjoint_experiment.name_of_choice_1 %></th>
+          <th><%= @conjoint_experiment.name_of_choice_2 %></th>
+        </tr>
+      </table>
+    </div>  
+  <% end %>
+</div>
+
+<%= content_for :javascript do %>
+  <script type="text/javascript">
+    $().ready(function() {
+      $('#print-page').click(function(e) {
+        e.preventDefault();
+        window.print();
+      });
+
+      $('#reload-page').click(function(e) {
+        e.preventDefault();
+        location.reload();
+      });
+
+      function shuffle(array){
+        var currentIndex = array.length, temporaryValue, randomIndex ;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+      }
+
+      var attributes_count = <%= @conjoint_experiment.conjoint_attributes.size %>;
+      <% levels = [] %>
+      <% @conjoint_experiment.conjoint_attributes.each do |attr| %>
+        <% levels << attr.conjoint_attribute_values.map{ |value| value.image.exists? ? value.image.url : value.level } %>
+      <% end %>
+      var levels_array = <%= raw levels %>;
+
+      var numbers_array = [];
+      for (var i = 0; i < attributes_count; i++) {
+        numbers_array.push(i);
+      }
+      var random_result = shuffle(numbers_array);
+
+      function fill_table(number) {
+
+        var table_element = $("#tables").find("#conjoint_table_" + number);
+
+        // Rows
+        for (var i = 0;i<random_result.length;i++) {
+          var row_element = $('<tr>');
+
+          // Row cells
+          for (var j=0;j<2;j++) {
+            var data_element = $('<td>');
+
+            var random_value = random_result[i];
+
+            var level = shuffle(levels_array[random_value]);
+            if (level[0].indexOf('/original/') !== -1) {
+              var picture = $("<img>");
+              picture.attr('src', level[0]);
+              var content = picture;
+            } else {
+              var content = level[0];
+            }
+
+            data_element.html(content);
+            row_element.append(data_element);
+          }
+
+          table_element.append(row_element);
+        }
+
+      }
+
+      var number_of_trials = <%= @conjoint_experiment.number_of_trials.to_i %>;
+      for (var i=1;i<number_of_trials + 1;i++) {
+        fill_table(i);
+      }
+    });
+  </script>
+<% end %>

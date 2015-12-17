@@ -1,0 +1,21 @@
+<h1>My Conjoint Experiments</h1>
+
+<%= link_to 'New Conjoint Experiment', new_conjoint_experiment_path, class: "btn btn-primary" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="actions"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conjoint_experiments.each do |conjoint_experiment| %>
+      <tr>
+        <td><%= link_to conjoint_experiment.name, conjoint_experiment %></td>
+        <td class="actions"><%= link_to 'Edit', edit_conjoint_experiment_path(conjoint_experiment) %> | <%= link_to 'Delete', conjoint_experiment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
