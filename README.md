@@ -43,6 +43,7 @@ Next, fill out the form with the values for your conjoint experiment. If you wou
 You should now see your generated conjoint experiment tables. To print or get PDFs for your experiment, click the *Print* button. To randomize again, click the *Run Again* button. To create a new conjoint experiment, click the *Create New* button.
 
 ![show result](public/screenshots/show_result.png)
+![show images](public/screenshots/with_images.png)
 ![print](public/screenshots/print.png)
 
 ## Known Limitations & Future Improvements
