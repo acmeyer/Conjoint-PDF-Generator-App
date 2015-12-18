@@ -16,9 +16,9 @@
 </div>
 
 <div id="tables">
-  <% @conjoint_experiment.number_of_trials.to_i.times do |n| %>
+  <% @conjoint_experiment.number_of_rounds.to_i.times do |n| %>
     <div class="page-break">
-      <h2 class="center">Trial #<%= n + 1 %></h2>
+      <h2 class="center">Round #<%= n + 1 %></h2>
       <table id="conjoint_table_<%= n + 1 %>" class="conjoint-table table-bordered">
         <tr>
           <th><%= @conjoint_experiment.name_of_choice_1 %></th>
@@ -106,8 +106,8 @@
 
       }
 
-      var number_of_trials = <%= @conjoint_experiment.number_of_trials.to_i %>;
-      for (var i=1;i<number_of_trials + 1;i++) {
+      var number_of_rounds = <%= @conjoint_experiment.number_of_rounds.to_i %>;
+      for (var i=1;i<number_of_rounds + 1;i++) {
         fill_table(i);
       }
     });

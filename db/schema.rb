@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216230532) do
+ActiveRecord::Schema.define(version: 20151218175206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20151216230532) do
   create_table "conjoint_experiments", force: :cascade do |t|
     t.string   "name_of_choice_1"
     t.string   "name_of_choice_2"
-    t.string   "number_of_trials"
+    t.string   "number_of_rounds"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "name"
