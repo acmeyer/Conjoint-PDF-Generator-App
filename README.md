@@ -63,6 +63,10 @@ You should now see your generated conjoint experiment tables. To print or get PD
 
 Released under the MIT License. See [LICENSE](LICENSE) or http://opensource.org/licenses/MIT for more information.
 
+## Other Open Source Projects for Conjoint
+
+* If you also are looking to run conjoint experiments offline on Qualtrics, see our other open source project [here](https://github.com/acmeyer/Conjoint-for-Qualtrics-Offline)
+
 ## Credits
 
 * [Leah Rosenzweig](http://www.leahrrosenzweig.com)
