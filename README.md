@@ -32,9 +32,20 @@ Next, you need to grab your access key id and secret access key. To do this, nav
 
 ![AWS security menu](public/screenshots/security_menu.png)
 
-In the **Your Security Credentials** section, open the *Access Keys* panel and click *Create New Access Key*. Make sure you grab both the access key id and secret access key in the popup that shows as you can not get the secret access key again after dismissing this window. Replace your values on line 12 of the [conjoint_attribute_value.rb](app/models/conjoint_attribute_value.rb) file.
+In the **Your Security Credentials** section, open the *Access Keys* panel and click *Create New Access Key*. Make sure you copy both the access key id and secret access key in the popup that shows as you can not get the secret access key again after dismissing this window.
 
 ![AWS security credentials](public/screenshots/security_credentials.png)
+
+After you have copied down your access key id and secret access key, you next should go to your app's Heroku dashboard page. Once there, navigate to the Settings tab. 
+
+![Heroku settings tab](public/screenshots/heroku-settings-tab.png)
+
+In the Settings tab, click on the 'Reveal Config Vars' button. That will expose your app's config variables. 
+
+![Heroku reveal configs](public/screenshots/heroku-reveal-configs.png)
+![Heroku configs](public/screenshots/heroku-key-value-fields.png)
+
+This is where you are going to add your AWS info. First, you will enter your bucket name that you just created. Click the first empty input box that says 'KEY'. Enter AWS_S3_BUCKET_NAME in that box. Next click into the 'VALUE' box and enter your bucket name. Save this configuration by clicking the 'Add' button next to the fields. Next, you will do the same for the access key id you copied down in the previous step. Enter AWS_ACCESS_KEY_ID for the 'KEY' and your copied down access key id in the 'VALUE' box. Add that. Finally, you need to do the same with your secret access key. Enter AWS_SECRET_ACCESS_KEY into the 'KEY' field and your copied down secret access key into the 'VALUE' field. Add that configuration variable. Congrats, you've got images setup for your Conjoint app!
 
 ## How to Use
 
