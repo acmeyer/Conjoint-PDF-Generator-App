@@ -14,6 +14,10 @@ The easiest way to use this app is to click on the button below that says "Deplo
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+Once you have created the Heroku app, you now need to install [Heroku Toolbelt](https://toolbelt.heroku.com/). This will give you command line access to your Heroku app which you will need. After following the link above and installing Heroku Toolbelt on your computer, you need to open up the Terminal app on your computer.
+
+Once the Terminal app is open you need to type the command `heroku login` and hit ENTER. This will then ask you to log into your Heroku account (this is the same account you just created on Heroku). After entering your email and password, you next should run `heroku run rake db:migrate -a name-of-your-app`. Replace 'name-of-your-app' with the name of your app found on Heroku. That will setup and create your app's database.
+
 ### AWS S3
 
 If you would like to use images in place of text for your attribute levels, you will need to have an [AWS](http://aws.amazon.com) account. Once you have signed up for an AWS account, sign in to your AWS console, click on the S3 link under **Storage & Content Delivery**. 
