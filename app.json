@@ -2,5 +2,8 @@
   "name": "Conjoint PDF Generator App",
   "description": "Generates conjoint style experiment PDFs to be used in field work.",
   "repository": "https://github.com/acmeyer/Conjoint-PDF-Generator-App",
-  "keywords": ["rails", "pdf", "conjoint"]
+  "keywords": ["rails", "pdf", "conjoint"],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
 }

@@ -18,13 +18,11 @@ The easiest way to use this app is to click on the button below that says "Deplo
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
-Once you have created the Heroku app (but before you can view the app), you need to install <a href="https://toolbelt.heroku.com/" target="_blank">Heroku Toolbelt</a>. This will give you command line access to your Heroku app which you will need. After following the link above and installing Heroku Toolbelt on your computer, you need to open up the Terminal app (for Macs) or Compand Prompt (for PCs) on your computer.
-
-Once the Terminal app is open you need to type the command `heroku login` and hit ENTER. This will then ask you to log into your Heroku account (this is the same account you just created on the Heroku website). After entering your email and password, you next should run `heroku run rake db:migrate -a name-of-your-app`. Replace 'name-of-your-app' with the name of your app found on Heroku. That will setup and create your app's database. Now you should be able to view your app. Your app lives at a URL of the form https://*your-app-name*.herokuapp.com.
+Once Heroku is down creating your app it will show the 'Manage App' or 'Open App' buttons. Your app lives at a URL of the form https://*your-app-name*.herokuapp.com.
 
 ### AWS S3
 
-If you would like to use images in place of text for your attribute levels, you will need to have an <a href="http://aws.amazon.com" target="_blank">AWS</a> account. Once you have signed up for an AWS account, sign in to your AWS console, click on the S3 link under **Storage & Content Delivery**. 
+If you would like to use images in place of text for your attribute levels, you will need to have an <a href="http://aws.amazon.com" target="_blank">AWS</a> account. Once you have signed up for an AWS account, sign in to your AWS console, click on the S3 link under **Storage & Content Delivery**.
 
 ![AWS S3](public/screenshots/aws_s3.png)
 
@@ -40,16 +38,16 @@ In the **Your Security Credentials** section, open the *Access Keys* panel and c
 
 ![AWS security credentials](public/screenshots/security_credentials.png)
 
-After you have copied down your access key id and secret access key, you should next go to your app's Heroku dashboard page. Once there, navigate to the Settings tab. 
+After you have copied down your access key id and secret access key, you should next go to your app's Heroku dashboard page. Once there, navigate to the Settings tab.
 
 ![Heroku settings tab](public/screenshots/heroku-settings-tab.png)
 
-In the Settings tab, click on the 'Reveal Config Vars' button. That will expose your app's config variables. 
+In the Settings tab, click on the 'Reveal Config Vars' button. That will expose your app's config variables.
 
 ![Heroku reveal configs](public/screenshots/heroku-reveal-configs.png)
 ![Heroku configs](public/screenshots/heroku-key-value-fields.png)
 
-This is where you are going to add your AWS info. First, you will enter your bucket name that you just created. Click the first empty input box that says **KEY**. Enter "AWS_S3_BUCKET_NAME" (without quotes) in that box. Next click into the **VALUE** box and enter your bucket name. Save this configuration by clicking the **Add** button next to the fields. Next, you will do the same for the access key id you copied in the previous step. Enter "AWS_ACCESS_KEY_ID" (without quotes) for the **KEY** and your copied access key id in the **VALUE** box. Add that. Finally, you need to do the same with your secret access key. Enter "AWS_SECRET_ACCESS_KEY" (without quotes) into the **KEY** field and your copied secret access key into the **VALUE** field. Add that configuration variable. Congrats, you've got images setup for your Conjoint app!
+This is where you are going to add your AWS info. First, you will enter your bucket name that you just created. Click the first empty input box that says **KEY**. Enter "AWS_S3_BUCKET_NAME" (without quotes) in that box. Next click into the **VALUE** box and enter your bucket name. Save this configuration by clicking the **Add** button next to the fields. Next, you will do the same for the access key id you copied in the previous step. Enter "AWS_ACCESS_KEY_ID" (without quotes) for the **KEY** and your copied access key id in the **VALUE** box. Add that. Finally, you need to do the same with your secret access key. Enter "AWS_SECRET_ACCESS_KEY" (without quotes) into the **KEY** field and your copied secret access key into the **VALUE** field. Add that configuration variable. Congrats, you've set up images for your Conjoint app!
 
 ## How to Use
 
@@ -93,5 +91,3 @@ Released under the MIT License. See [LICENSE](LICENSE) or http://opensource.org/
 * <a href="http://www.leahrrosenzweig.com" target="_blank">Leah Rosenzweig</a>
 * <a href="http://alexcmeyer.com" target="_blank">Alex Meyer</a>
 * For citations: “Meyer and Rosenzweig 2015”
-
-
