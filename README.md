@@ -18,7 +18,7 @@ The easiest way to use this app is to click on the button below that says "Deplo
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
-Once Heroku is down creating your app it will show the 'Manage App' or 'Open App' buttons. Your app lives at a URL of the form https://*your-app-name*.herokuapp.com.
+Once Heroku is down creating your app it will show the 'Manage App' or 'View' buttons. Your app lives at a URL of the form https://*your-app-name*.herokuapp.com.
 
 ### AWS S3
 
