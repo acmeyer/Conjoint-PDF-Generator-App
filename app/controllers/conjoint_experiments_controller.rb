@@ -73,8 +73,9 @@ class ConjointExperimentsController < ApplicationController
   private
     def attributes_hash(attributes_order)
       attributes_order.each_with_index.map{ |x, i|
+        random_choice = (0...@conjoint_experiment.conjoint_attributes[attributes_order[i]].conjoint_attribute_values.count).to_a.shuffle!.first
         { "#{@conjoint_experiment.conjoint_attributes[attributes_order[i]].name}":
-          { "text": @conjoint_experiment.conjoint_attributes[attributes_order[i]].conjoint_attribute_values[(0...@conjoint_experiment.conjoint_attributes[attributes_order[i]].conjoint_attribute_values.count).to_a.shuffle!.first].level, "image": @conjoint_experiment.conjoint_attributes[attributes_order[i]].conjoint_attribute_values[(0...@conjoint_experiment.conjoint_attributes[attributes_order[i]].conjoint_attribute_values.count).to_a.shuffle!.first].try(:image).try(:url) }
+          { "text": @conjoint_experiment.conjoint_attributes[attributes_order[i]].conjoint_attribute_values[random_choice].level, "image": @conjoint_experiment.conjoint_attributes[attributes_order[i]].conjoint_attribute_values[random_choice].try(:image).try(:url) }
         }
       }
     end
