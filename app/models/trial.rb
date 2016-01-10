@@ -13,8 +13,8 @@ class Trial < ActiveRecord::Base
       #
       # This is ugly, but basically grabs the first choice
       # and only selects the keys, which are the custom attributes
-      all.first.data.first.last.first[1].each do |name|
-        header_row << name.keys.first
+      all.first.data.first.last.first[1].each_with_index do |name, i|
+        header_row << "Attribute #{i + 1}"
       end
       csv << header_row
 
