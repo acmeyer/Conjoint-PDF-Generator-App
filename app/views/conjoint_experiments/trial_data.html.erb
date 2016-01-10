@@ -1,0 +1,7 @@
+<h1>Trial data</h1>
+<% @trials.each do |trial| %>
+<div class="trial">
+  <h3>UID: <%= trial.uid %></h3>
+  <div><strong>DATA:</strong> <%= trial.data %></div>
+</div>
+<% end %>

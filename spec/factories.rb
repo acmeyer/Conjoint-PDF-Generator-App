@@ -1,4 +1,8 @@
-FactoryGirl.define do  factory :conjoint_attribute_value do
+FactoryGirl.define do  factory :trial do
+    uid "MyString"
+conjoint_experiment_id 1
+  end
+  factory :conjoint_attribute_value do
     value "MyString"
   end
   factory :conjoint_attribute do

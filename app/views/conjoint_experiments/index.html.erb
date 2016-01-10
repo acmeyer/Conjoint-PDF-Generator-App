@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Trials Data</th>
       <th class="actions"></th>
     </tr>
   </thead>
@@ -14,6 +15,9 @@
     <% @conjoint_experiments.each do |conjoint_experiment| %>
       <tr>
         <td><%= link_to conjoint_experiment.name, conjoint_experiment %></td>
+        <td>
+          <%= link_to "Click to download CSV", trial_data_conjoint_experiment_path(conjoint_experiment, format: "csv") %>
+        </td>
         <td class="actions"><%= link_to 'Edit', edit_conjoint_experiment_path(conjoint_experiment) %> | <%= link_to 'Delete', conjoint_experiment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

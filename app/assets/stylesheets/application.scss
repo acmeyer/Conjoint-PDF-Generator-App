@@ -16,6 +16,10 @@
   margin-bottom: 30px;
 }
 
+.show-print {
+  display: none;
+}
+
 table.conjoint-table {
     border-collapse: collapse;
     width: 100%;
@@ -34,9 +38,9 @@ table.conjoint-table th, table.conjoint-table td {
     text-align: center;
 }
 table.conjoint-table th {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
-  color: red;
+  color: #ff2525;
   border: none;
 }
 .page-break { page-break-after: always; }
