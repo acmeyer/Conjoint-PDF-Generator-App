@@ -40,8 +40,12 @@ class Trial < ActiveRecord::Base
 
   def self.attribute_values_for_row(round, name_of_choice)
     attr_value_array = []
-    round.last[name_of_choice].each do |attributes|
-      attr_value_array << attributes.values.first["text"]
+    if round.last[name_of_choice]
+      round.last[name_of_choice].each do |attributes|
+        attr_value_array << attributes.values.first["text"]
+      end
+    else
+      attr_value_array << 'N/A' # Name of choice may have changed
     end
     attr_value_array
   end
