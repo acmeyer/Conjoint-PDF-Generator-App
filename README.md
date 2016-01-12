@@ -53,17 +53,27 @@ This is where you are going to add your AWS info. First, you will enter your buc
 
 The app is very simple to use. The homepage just lists all of your previously made conjoint experiments so that you can find them later. To make a new conjoint experiment, click the *New Conjoint Experiment* button at the top.
 
-Next, fill out the form with the values for your conjoint experiment. The name of your conjoint experiment is what it will be saved as but will not appear on the pdf. Choice 1 and 2 will be what the first and second profiles will be labeled as. For example, you can insert A for Choice 1 and B for Choice 2 to get something that looks like the Test example below.
+Next, fill out the form with the values for your conjoint experiment. The name of your conjoint experiment is what the project will be saved as but will not appear on the pdf. Choice 1 and 2 will be what the first and second profiles will be labeled as. For example, you can insert "A" for Choice 1 and "B" for Choice 2 to get something that looks like the example below.
 
-If you would like to use images instead of text for a particular level, you can upload an image by clicking on the *choose file* button. If an image is uploaded, the app will only display the image, not the text. After filling out the form, click the *Create Conjoint experiment* button.
+To use images instead of text for a particular level, you can upload an image by clicking on the *choose file button*. If an image is uploaded, the app will only display the image, not the text, on the pdf. However, you need to add a text label to the attribute-level that the app can store in the csv file it produces of the profiles. After filling out the form, click the *Create Conjoint experiment* button.
 
 ![create experiment](public/screenshots/create_experiment.png)
 
-You should now see your generated conjoint experiment tables. To print or get PDFs for your experiment, click the *Print* button. To randomize again, click the *Run Again* button. To create a new conjoint experiment, click the *Create New* button.
+You should now see your generated conjoint experiment tables. To print or save PDFs for your experiment, click the *Print* button. To randomize again, click the *Run Again* button. To create a new conjoint experiment, click the *Create New* button.
 
-![show result](public/screenshots/show_result.png)
-![show images](public/screenshots/with_images.png)
-![print](public/screenshots/print.png)
+![show result](public/screenshots/show_results.png)
+
+Each time you click *Run Again* the conjoint profiles are re-randomized, meaning the order of the profiles is randomized as are the levels of each attribute. The app also produces a unique ID for each packet, which is a randomized 10 character sequence. This unique ID is printed on every page of the conjoint run. A new UID is assigned for each run (i.e. each PDF packet). This ID not only helps identify pages to their packets (if, for example, pages are ripped off in the process of data collection), but also allows researchers to connect profiles evaluated to respondents’ other survey responses if collected on a tablet.
+
+![show images](public/screenshots/with_uid.png)
+
+The runs of the conjoint experiment are recorded by the app in a csv file. The specific profiles presented in the pdf are recorded using the unique packet ID.  On the home screen under *Trials Data* you can click to download this csv.
+
+![csv](public/screenshots/csv.png)
+
+The csv output has a column for UID (unique packet ID), Round, Choice and each attribute in the profile. The csv records the order the attributes are displayed in the profile (i.e. Attribute 1, Attribute 2, etc.). Since the order of the attributes is random for each run the attribute-levels that populate "Attribute 1", "Attribute 2", etc. change depending on which attribute appeared first and second in that run. For example, in the data shown below the packet with UID = 512B1536E1 had profiles with the first attribute as Religion and second attribute as Party. We can see that in packet UID = 01DE3FE58C the attribute order was reversed and the first attribute presented was Party, while the second was Religion.
+
+![spreadsheet](public/screenshots/spreadsheet.png)
 
 ## Known Limitations & Future Improvements
 
@@ -90,4 +100,4 @@ Released under the MIT License. See [LICENSE](LICENSE) or http://opensource.org/
 
 * <a href="http://www.leahrrosenzweig.com" target="_blank">Leah Rosenzweig</a>
 * <a href="http://alexcmeyer.com" target="_blank">Alex Meyer</a>
-* For citations: “Meyer and Rosenzweig 2015”
+* For citations: “Meyer & Rosenzweig 2015”
