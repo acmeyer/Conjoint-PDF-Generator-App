@@ -1,6 +1,6 @@
 # Conjoint PDF Generator App
 
-A Rails app for producing offline conjoint PDFs.
+A Rails app for producing offline conjoint PDFs. A hosted version of this app (through MIT GovLab) can be found <a href="https://conjoint-pdf-app.herokuapp.com/users/sign_in" target="_blank">here</a>.
 
 ## Setup
 
