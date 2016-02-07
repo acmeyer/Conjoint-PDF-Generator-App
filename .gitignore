@@ -12,9 +12,6 @@
 /tags
 /tmp/*
 
-# Ignore local database configurations
-/config/database.yml
-
 # Ignore application configuration
 /config/application.yml
 
