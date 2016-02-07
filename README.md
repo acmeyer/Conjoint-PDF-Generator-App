@@ -1,6 +1,6 @@
 # Conjoint PDF Generator App
 
-A Rails app for producing offline conjoint PDFs.
+A Rails app for producing offline conjoint PDFs. A hosted version of this app (through MIT GovLab) can be found <a href="https://conjoint-pdf-app.herokuapp.com/users/sign_in" target="_blank">here</a>.
 
 ## Setup
 
@@ -95,9 +95,3 @@ Released under the MIT License. See [LICENSE](LICENSE) or http://opensource.org/
 ## Other Open Source Projects for Conjoint
 
 * If you also are looking to run conjoint experiments offline on Qualtrics, see our other open source project <a href="https://github.com/acmeyer/Conjoint-for-Qualtrics-Offline" target="_blank">here</a>.
-
-## Credits
-
-* <a href="http://www.leahrrosenzweig.com" target="_blank">Leah Rosenzweig</a>
-* <a href="http://alexcmeyer.com" target="_blank">Alex Meyer</a>
-* For citations: “Meyer & Rosenzweig 2015”
