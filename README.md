@@ -2,6 +2,8 @@
 
 A Rails app for producing offline conjoint PDFs. A hosted version of this app (through MIT GovLab) can be found <a href="https://conjoint-pdf-app.herokuapp.com/users/sign_in" target="_blank">here</a>.
 
+Read more about our offline conjoint tools <a href="http://thepoliticalmethodologist.com/2016/02/18/conjoint-analysis-tools-for-developing-country-contexts/" target="_blank">here</a>.
+
 ## Setup
 
 This is a <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> 4.2.0 app. For more information on how to install this app on <a href="http://heroku.com/" target="_blank">Heroku</a> see below.
