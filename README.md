@@ -14,7 +14,7 @@ If you are using images instead of text in your conjoint experiment, you will ne
 
 ### Heroku
 
-The easiest way to use this app is to click on the button below that says "Deploy to Heroku". In order to use this method, you will need to have a Heroku account. It is easy and free to sign up for a Heroku account, which can be done <a href="https://signup.heroku.com/?c=70130000001x9jFAAQ" target="_blank">here</a>. Once you have a Heroku account, just click on the button below and follow the instructions on the Heroku page. On this page you can create a name for your app if you want (this goes into the URL of your webpage that generates conjoint pdfs). The click "Deploy for Free".
+The easiest way to use this app is to click on the button below that says "Deploy to Heroku". In order to use this method, you will need to have a Heroku account. It is easy and free to sign up for a Heroku account, which can be done <a href="https://signup.heroku.com/?c=70130000001x9jFAAQ" target="_blank">here</a>. Once you have a Heroku account, just click on the button below and follow the instructions on the Heroku page. On this page you can create a name for your app if you want (this goes into the URL of your webpage that generates conjoint pdfs). Then click "Deploy for Free".
 
 <a href="https://heroku.com/deploy" target="_blank">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
