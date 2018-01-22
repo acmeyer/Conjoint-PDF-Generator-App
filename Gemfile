@@ -20,7 +20,7 @@ gem "paperclip"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 4.2.0"
+gem "rails", "~> 4.2.7.1"
 gem "recipient_interceptor"
 gem 'bootstrap-sass'
 gem "sass-rails", "~> 5.0"
